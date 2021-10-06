@@ -25,7 +25,11 @@ find_package(pluginlib REQUIRED)
 
 nav2_package()
 
-link_libraries(stdc++fs)
+if(NOT APPLE)
+  link_libraries(stdc++fs)
+else()
+
+endif()
 
 include_directories(
   include
