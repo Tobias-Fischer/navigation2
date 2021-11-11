@@ -1,6 +1,8 @@
 cmake_minimum_required(VERSION 3.5)
 project(nav2_costmap_2d)
 
+add_definitions(-DNOMINMAX)
+
 find_package(ament_cmake REQUIRED)
 find_package(geometry_msgs REQUIRED)
 find_package(laser_geometry REQUIRED)
