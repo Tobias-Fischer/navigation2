@@ -20,6 +20,7 @@
  * to ignore deprecated declarations
  */
 #define _LIBCPP_NO_EXPERIMENTAL_DEPRECATION_WARNING_FILESYSTEM
+#define _SILENCE_EXPERIMENTAL_FILESYSTEM_DEPRECATION_WARNING 
 
 
 #include <experimental/filesystem>
