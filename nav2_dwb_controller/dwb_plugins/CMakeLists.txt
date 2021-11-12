@@ -1,6 +1,8 @@
 cmake_minimum_required(VERSION 3.5)
 project(dwb_plugins)
 
+add_definitions(-DNOMINMAX)
+
 find_package(ament_cmake REQUIRED)
 find_package(nav2_common REQUIRED)
 find_package(angles REQUIRED)
