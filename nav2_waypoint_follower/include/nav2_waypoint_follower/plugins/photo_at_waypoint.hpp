@@ -20,6 +20,7 @@
  * to ignore deprecated declarations
  */
 #define _LIBCPP_NO_EXPERIMENTAL_DEPRECATION_WARNING_FILESYSTEM
+#define _SILENCE_EXPERIMENTAL_FILESYSTEM_DEPRECATION_WARNING
 
 
 #include <experimental/filesystem>
@@ -27,13 +28,14 @@
 #include <string>
 #include <exception>
 
+#include <opencv2/core.hpp>
+#include <opencv2/opencv.hpp>
+
 #include "rclcpp/rclcpp.hpp"
 #include "rclcpp_components/register_node_macro.hpp"
 
 #include "sensor_msgs/msg/image.hpp"
 #include "nav2_core/waypoint_task_executor.hpp"
-#include "opencv4/opencv2/core.hpp"
-#include "opencv4/opencv2/opencv.hpp"
 #include "cv_bridge/cv_bridge.h"
 #include "image_transport/image_transport.hpp"
 
