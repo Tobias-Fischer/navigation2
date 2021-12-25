@@ -13,6 +13,8 @@ find_package(pluginlib REQUIRED)
 find_package(tf2 REQUIRED)
 find_package(angles REQUIRED)
 
+add_definitions(-DNOMINMAX)
+
 nav2_package()
 set(CMAKE_CXX_STANDARD 17)
 
