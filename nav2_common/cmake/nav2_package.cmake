@@ -45,6 +45,7 @@ macro(nav2_package)
 
   # Defaults for Microsoft C++ compiler
   if(MSVC)
+    add_definitions(-DNOMINMAX)
     # https://blog.kitware.com/create-dlls-on-windows-without-declspec-using-new-cmake-export-all-feature/
     set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON)
 
