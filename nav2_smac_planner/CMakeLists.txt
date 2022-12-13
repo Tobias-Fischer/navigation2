@@ -24,6 +24,7 @@ find_package(Eigen3 REQUIRED)
 find_package(angles REQUIRED)
 find_package(ompl REQUIRED)
 find_package(OpenMP REQUIRED)
+find_package(ode REQUIRED)
 
 if(NOT CMAKE_CXX_STANDARD)
   set(CMAKE_CXX_STANDARD 17)
@@ -85,7 +86,7 @@ add_library(${library_name} SHARED
   src/node_basic.cpp
 )
 
-target_link_libraries(${library_name} ${OMPL_LIBRARIES} ${OpenMP_LIBRARIES}  OpenMP::OpenMP_CXX)
+target_link_libraries(${library_name} ${OMPL_LIBRARIES} ${OpenMP_LIBRARIES} ${ODE_LIBRARIES} OpenMP::OpenMP_CXX)
 target_include_directories(${library_name} PUBLIC ${Eigen3_INCLUDE_DIRS})
 
 ament_target_dependencies(${library_name}
@@ -106,7 +107,7 @@ add_library(${library_name}_2d SHARED
   src/node_basic.cpp
 )
 
-target_link_libraries(${library_name}_2d ${OMPL_LIBRARIES})
+target_link_libraries(${library_name}_2d ${OMPL_LIBRARIES} ${ODE_LIBRARIES})
 target_include_directories(${library_name}_2d PUBLIC ${Eigen3_INCLUDE_DIRS})
 
 ament_target_dependencies(${library_name}_2d
@@ -127,7 +128,7 @@ add_library(${library_name}_lattice SHARED
   src/node_basic.cpp
 )
 
-target_link_libraries(${library_name}_lattice ${OMPL_LIBRARIES})
+target_link_libraries(${library_name}_lattice ${OMPL_LIBRARIES} ${ODE_LIBRARIES})
 target_include_directories(${library_name}_lattice PUBLIC ${Eigen3_INCLUDE_DIRS})
 
 ament_target_dependencies(${library_name}_lattice
