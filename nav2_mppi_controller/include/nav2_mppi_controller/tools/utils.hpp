@@ -454,7 +454,7 @@ inline void savitskyGolayFilter(
   const models::OptimizerSettings & settings)
 {
   // Savitzky-Golay Quadratic, 9-point Coefficients
-  xt::xarray<float> filter = {-21.0, 14.0, 39.0, 54.0, 59.0, 54.0, 39.0, 14.0, -21.0};
+  xt::xtensor_fixed<float, xt::xshape<9>> filter = {-21.0f, 14.0f, 39.0f, 54.0f, 59.0f, 54.0f, 39.0f, 14.0f, -21.0f};
   filter /= 231.0;
 
   const unsigned int num_sequences = control_sequence.vx.shape(0) - 1;
